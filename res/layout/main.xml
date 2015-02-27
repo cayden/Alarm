@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    >
+<Button  
+	android:id="@+id/timeBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/time"
+    android:textSize="20sp"
+    />
+<Button  
+	android:id="@+id/activityBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/text_activity"
+    android:textSize="20sp"
+    />
+
+<Button  
+	android:id="@+id/receiverBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/text_receiver"
+    android:textSize="20sp"
+    />
+
+<Button  
+	android:id="@+id/serviceBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/text_service"
+    android:textSize="20sp"
+    />
+
+<Button  
+	android:id="@+id/intentServiceBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/text_intentservice"
+    android:textSize="20sp"
+    />
+<Button  
+	android:id="@+id/cancelAlarmBtn"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/cancelAlarm"
+    />    
+</LinearLayout>
