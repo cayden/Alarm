@@ -23,6 +23,8 @@ public class ActionActivity extends Activity {
 		button.setText("我是由AlarmManager启动的Activity");
 		
 		setContentView(button);
+		
+		
 	}
 	
 }

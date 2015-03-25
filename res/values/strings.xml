@@ -8,4 +8,6 @@
 	<string name="text_service">服务Service</string>
 	<string name="text_intentservice">服务IntentService</string>
 	<string name="cancelAlarm">取消闹钟</string>
+	<string name="enter">点击进入</string>
+	<string name="str_getthum">获取缩略图</string>
 </resources>

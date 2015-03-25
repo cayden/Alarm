@@ -1,12 +1,15 @@
 package com.cayden.activity;
 
 import java.util.Calendar;
-
+import java.util.List;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -90,9 +93,46 @@ public class Alarm extends Activity implements OnClickListener{
         });
         
         alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        
+        
+      
     }
     
-    private void cancelAlarm(){
+    /**
+	 * 用来判断服务是否运行.
+	 * 
+	 * @param context
+	 * @param className
+	 *            判断的服务名字
+	 * @return true 在运行 false 不在运行
+	 */
+	public  boolean isServiceRunning(Context context, String className) {
+		ActivityManager am = (ActivityManager) context
+				.getSystemService(Context.ACTIVITY_SERVICE);
+		List<RunningServiceInfo> serviceinfos = am.getRunningServices(100);
+		for (RunningServiceInfo info : serviceinfos) {
+			// System.out.println(info.service.getClassName()+"--->"+className);
+
+			if (className.equals(info.service.getClassName())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+    
+    @Override
+	protected void onResume() {
+    	String classname=NotifyService.class.getName();
+    	if(!isServiceRunning(this, classname)){
+    		  Intent localIntent3 = new Intent(this, NotifyService.class);
+    	      startService(localIntent3);
+    	}
+		super.onResume();
+	}
+
+	private void cancelAlarm(){
     	Intent intent = null;
 		PendingIntent pendingIntent = null;
 		if(selectType<0)return;

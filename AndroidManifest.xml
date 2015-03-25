@@ -5,16 +5,19 @@
       android:versionName="1.0">
     <application android:icon="@drawable/icon" android:label="@string/app_name">
     	<receiver android:name="com.cayden.activity.AlarmReceiver" android:process=":remote" />
-        <activity android:name="com.cayden.activity.Alarm"
-                  android:label="@string/app_name">
+        <activity android:name="com.cayden.activity.Lesson_10"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity android:name="com.cayden.activity.ActionActivity"></activity>
+        <activity android:name="com.cayden.activity.ActionActivity"></activity>
+		<activity android:name="com.cayden.activity.Alarm"></activity>
 		<service android:name="com.cayden.activity.ActionService"></service>
 		<service android:name="com.cayden.activity.ActionIntentService"></service>
+		<service android:name="com.cayden.activity.NotifyService"></service>
     </application>
     <uses-sdk android:minSdkVersion="8" />
 </manifest> 
