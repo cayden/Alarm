@@ -91,12 +91,12 @@ public class MainActivity extends Activity {
       
     public void doZipExtractorWork(){  
         //ZipExtractorTask task = new ZipExtractorTask("/storage/usb3/system.zip", "/storage/emulated/legacy/", this, true);  
-        ZipExtractorTask task = new ZipExtractorTask("/storage/emulated/legacy/testzip.zip", "/storage/emulated/legacy/", this, true);  
+        ZipExtractorTask task = new ZipExtractorTask(Environment.getExternalStorageDirectory().getPath()+"/"+"ZoomImageDemo.zip", Environment.getExternalStorageDirectory().getPath()+"/", this, true);  
         task.execute();  
     }  
       
     private void doDownLoadWork(){  
-        DownLoaderTask task = new DownLoaderTask("http://192.168.9.155/johnny/testzip.zip", "/storage/emulated/legacy/", this);  
+        DownLoaderTask task = new DownLoaderTask("http://10.1.2.34/upload/ZoomImageDemo.zip", Environment.getExternalStorageDirectory().getPath()+"/", this);  
         //DownLoaderTask task = new DownLoaderTask("http://192.168.9.155/johnny/test.h264", getCacheDir().getAbsolutePath()+"/", this);  
         task.execute();  
     }  
